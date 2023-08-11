@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GMS</title>
+  <link rel="icon" href="./images/barbell-outline.svg" type="image/x-icon">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <%- include('__header.ejs') %>
+  <h1>Home page</h1>
+  <!-- <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> -->
+
+  <div class="Trainees">
+  <h2>Trainees Attendance</h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Plan_id</th>
+    </tr>
+    <% for(let index = 0; index<trainees.length;index++) {%>
+      <tr>
+        <td><%=trainees[index].name %></td>
+        <td><%=trainees[index].email %></td>
+        <td><%=trainees[index].plan_id %></td>
+      </tr>
+      <% } %>
+  </table>
+  </div>
+</body>
+</html>
