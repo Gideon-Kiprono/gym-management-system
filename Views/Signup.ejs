@@ -5,8 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SignUp</title>
   <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/Images/letter-g-icon (1).png" type="image/png">
 </head>
 <body>
- <%- include('__header.ejs') %> 
+ <%-include("__header.ejs")%>
+  <div class="container">
+  <h1>SignUp</h1>
+  <form action="/signUp" method="post">
+    <div>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email">
+    </div>
+    <div>
+      <label for="name">Full name</label>
+      <input type="text" name="name" id="name">
+    </div>
+    <div>
+      <div>
+      <label for="role">Role</label>
+      <select name="role" id="role">
+        <option value="Normal">Normal</option>
+        <option value="Admin">Admin</option>
+      </select>
+    </div>
+    <div>
+      <label for="gender">Gender</label>
+      <select name="gender" id="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+    </div>
+    <div>
+      <label for="pass">Password</label>
+      <input type="password" name="pass" id="pass" minlength="3" required>
+      <label class="show-password-label">
+        <input type="checkbox" onclick="myFunction()">Show Password
+      </label>
+    </div>
+    <div>
+      <input type="submit" value="Add New User">
+    </div>
+  </form>
+  </div>
+  <script src="/js/index.js"></script>
 </body>
 </html>

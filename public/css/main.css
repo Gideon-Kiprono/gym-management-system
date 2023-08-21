@@ -3,6 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+  background: linear-gradient(90deg, rgb(233, 239, 240) 0%, rgb(254, 255, 255) 59%);
+  font-size: 20px;
+} 
 
 header{
   position: sticky;
@@ -13,11 +17,16 @@ header{
   justify-content: space-between;
   align-items: center;
   padding: 15px 15px;
-  background-color: white;
-  background-image: url('../Images/image-hero-desktop.jpg');
+  /* background-color: white; */
+  /* background-image: url('../Images/image-hero-desktop.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
   height:100px
+}
+header >h1{
+  margin-right: 10px;
+  color: rgb(245, 126, 23);
+  font-size: 50px;
 }
 header nav{
   display: flex;
@@ -33,17 +42,14 @@ header nav a{
   padding: 10px 10px;
 }
 header nav a:hover{
-  color:white;
+  color:black;
   border-bottom-color: #e70606;
-  background-color: red;
-}
-header h1{
-  color: white;
+  background-color: rgb(245, 126, 23); 
 }
 form {
   max-width: 300px;
   margin: 0 auto;
-  background-color: burlywood;
+  background-color: rgb(223, 221, 216);
   border-radius: 20px;
   padding: 25px;
 }
@@ -54,10 +60,35 @@ form label,
   width: 100%;
   margin-bottom: 10px;
     }
-    h1,h2{
+    form input[type="submit"] {
+      background-color: #766f6f;
+      color:black;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    form input[type="submit"]:hover{
+      color:white;
+      background-color:black;
+    }
+    .show-password-label {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+.section1> h1,h2{
+  margin: 30px 25%;
+    text-align: center;
+    color: white;
+}
+    /* .section1 h1{ 
     margin: 30px 25%;
     text-align: center;
-  }
+    color: white;
+  } */
     table {
   font-family: arial, sans-serif;
   /* border-collapse: collapse; */
@@ -73,3 +104,175 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+.card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 30px 60px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgb(175, 174, 172);
+  transition: transform 0.3s; /* Add a smooth transition for scaling */
+  width: 49.99999%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.card:hover{
+  transform: translateY(-13px); /* Scale up by 5% */
+}
+.card-container {
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: nowrap; */
+  align-items: center;
+  width: 49.99999%;
+}
+.plan-container{
+  display: flex;
+  justify-content: flex-start;
+}
+.container > table{
+  align-items: center;
+  padding: 10px;
+  margin-left:50px;
+}
+
+/* Section 1 */
+.section1 {
+  background-image: url(/Images/brett-jordan-U2q73PfHFpM-unsplash.jpg);
+  padding: 20px 20px;
+  background-size: cover;
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+  min-height: 350px;
+}
+.description h3 {
+  /* margin-top: 50px; */
+  font-size: 40px;
+  margin-bottom: 30px;
+  line-height: 55px;
+  color: white;
+}
+.description h4 {
+  margin-top: 10px;
+  font-style: italic;
+  font-size: 25px;
+   margin-bottom: 30px;
+   line-height: 55px;
+   color: rgb(245, 126, 23);
+}
+.description p {
+  margin-top: 20px;
+  font-size: 20px;
+  margin-bottom: 30px;
+  line-height: 55px;
+  color: white;
+}
+.description a{
+  text-decoration: none;
+  color: rgb(245, 126, 23);
+}
+/* Section 2  */
+.section2{
+  background-image: url(/Images/bg-desktop-light.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.description-2 h1{
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+.programs-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* To evenly distribute elements in two columns */
+  /* max-width: 800px;  */
+  margin: 0 30px; /* Center the programs element horizontally */
+}
+.programs {
+  width: calc(50% - 30px);
+  margin-bottom: 20px;
+  padding: 20px; 
+  border: 1px solid black; 
+  box-sizing: border-box; 
+}
+.programs:hover{
+  border:1px solid rgb(245, 126, 23);
+}
+.programs > img {
+  max-width: 100%; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40%;
+}
+
+.programs h1 {
+  margin-top: 10px; 
+}
+
+.programs p {
+  margin-top: 10px; 
+}
+/*
+.programs-container{
+  display: flex;
+  gap: 20px;
+  margin: 10px 20px;
+}
+.programs{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  width: 49%;
+} */
+/* Footer */
+footer .quick-links {
+   display: flex;
+  justify-content: center;
+ align-items: center;
+  padding: 20px 30px;
+  background-color: lightgray;
+}
+footer .quick-links ul {
+  list-style-type: none;
+  display: flex;
+  gap: 10px;
+}
+.quick-links ul li:hover {
+  transform: scale(1.1); /* Scale up the element when hovered over */
+}
+footer .quick-links ul:last-child {
+  flex-wrap: wrap;
+}
+footer .quick-links ul:last-child h4 {
+  width: 100%;
+}
+footer a {
+  text-decoration: none;
+  color: inherit;
+}
+footer .footer-text {
+  padding: 20px 80px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  /* gap: 30px; */
+}
+/* Apply margin to the second and third <p> elements */
+footer .footer-text p:nth-child(2) {
+  margin-left: 20px; /* Adjust this margin to your preference */
+}
+
+footer .footer-text p:nth-child(3) {
+  margin-left: 100px; /* Adjust this margin to your preference */
+}
+
+
+

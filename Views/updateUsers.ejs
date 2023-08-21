@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Add new user</title>
   <link rel="stylesheet" href="/css/main.css">
-  
+  <link rel="icon" href="/Images/letter-g-icon (1).png" type="image/png">
 </head>
 <body>
   <%-include("__header.ejs")%>
@@ -14,34 +14,40 @@
   <form action="/addUser" method="post">
      <div>
       <label for="plan">Plan Id</label>
-      <select name="plan" id="plan">
+      <select name="plan" id="plan" required>
         <option value="1">Daily</option>
         <option value="2">Monthly</option>
         <option value="3">Quarterly</option>
         <option value="4">Yearly</option>
+        <option value="5">Challenge</option>
       </select>
     </div>
     <div>
       <label for="email">Email</label>
-      <input type="email" name="email" id="email">
+      <input type="email" name="email" id="email" required>
     </div>
     <div>
       <label for="name">Full name</label>
-      <input type="text" name="name" id="name">
+      <input type="text" name="name" id="name" required>
     </div>
     <div>
     <div>
       <label for="phone">Phone</label>
-      <input type="number" name="phone" id="phone">
+      <input type="number" name="phone" id="phone" required>
     </div>
     <div>
-      <label for="pass">Password</label>
-      <input type="password" name="pass" id="pass">
+      <label for="startDate">Start Date</label>
+      <input type="date" name="startDate" id="startDate" required>
+    </div>
+    <div>
+      <label for="endDate">End Date</label>
+      <input type="date" name="endDate" id="endDate" required>
     </div>
     <div>
       <input type="submit" value="Add New User">
     </div>
   </form>
   </div>
+  <script src="/js/index.js"></script>
 </body>
 </html>

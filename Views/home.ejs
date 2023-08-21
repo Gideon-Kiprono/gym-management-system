@@ -4,31 +4,86 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GMS</title>
-  <link rel="icon" href="./images/barbell-outline.svg" type="image/x-icon">
+  <link rel="icon" href="/Images/letter-g-icon (1).png" type="image/png">
   <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
+  <section class="section1">
   <%- include('__header.ejs') %>
-  <h1>Home page</h1>
-  <!-- <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> -->
+<h1>Home Page</h1>
+  <% if(locals.user){%>
+    <h2>Welcome <%= user.users_name  %></h2>
+    <% }else{ %>
+      <h2>Hello, Welcome to GMS</h2>
+      <% } %> 
+      <div class="container">
 
-  <div class="Trainees">
-  <h2>Trainees Attendance</h2>
+<div class="description">
+  <h3>Software for managing gym membership</h3>
+  <h4>Software for the fitness industry to ease gym operations</h4>
+  <P>GOEFIT is a software for gym membership management, trainers can be able to track the payment of the users of the facility</P>
+  <p>Already have an account <a href="/login">Sign In</a></p>
+  <p>New here,<a href="/signUp">Sign up</a></p> 
+</div>
+</section>
+<section class="section2">
+  <div class="description-2">
+  <h1>Training Programs</h1>
+  <div class="programs-container">
+  <div class="programs">
+    <img src="/Images/body-building.svg" alt="Body-building">
+    <h1>Body Building</h1>
+    <p>We are committed to helping you achieve your bodybuilding goals through a comprehensive approach to fitness. Our bodybuilding services are designed to help you build muscle, increase strength, and sculpt your physique to your desired shape.</p>
+  </div>
+  <div class="programs">
+    <img src="/Images/cardio.svg" alt="Cardio">
+    <h1>Aerobics</h1>
+    <p>We offer a dynamic and energizing aerobics program designed to improve cardiovascular health, boost endurance, and enhance overall fitness. Aerobics is a fun and effective way to get your heart rate up, burn calories, and improve your physical well-being.</p>
+  </div>
+  <div class="programs">
+    <img src="/Images/power-lifting.svg" alt="Power-lifting">
+    <h1>Power Lifting</h1>
+    <p>We provide comprehensive powerlifting programs for individuals interested in developing raw strength and competing in the sport of powerlifting. Powerlifting is a strength sport that focuses on three primary lifts: squat, bench press, and deadlift. It's an excellent choice for those looking to maximize their strength and push their physical limits.</p>
+  </div>
+  <div class="programs">
+    <img src="/Images/yoga.svg" alt="Yoga and stretching">
+    <h1>Yoga and stretching</h1>
+    <p>We offer a holistic approach to fitness and well-being by providing yoga and stretching programs. These services are designed to promote flexibility, balance, relaxation, and overall mental and physical wellness.</p>
+  </div>
+  </div>
+</div>
+</section>
+<section class="section3">
+  <h1>We are here to guide you</h1>
+  <p>Team of expert trainers are available to guide and support you. Get prffesional pans, workouts and nutrition plans customixzed to your specific needs</p>
+</section>
+<section class="section4">
+  <h1>Our Prices</h1>
+</section>
+<div class="Trainees">
+  
+  <h2>Trainees Data</h2>
   <table>
     <tr>
       <th>Name</th>
       <th>Email</th>
-      <th>Plan_id</th>
+      <th>Plan_description</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+
     </tr>
     <% for(let index = 0; index<trainees.length;index++) {%>
       <tr>
         <td><%=trainees[index].name %></td>
         <td><%=trainees[index].email %></td>
-        <td><%=trainees[index].plan_id %></td>
+        <td><%=trainees[index].description %></td>
+        <td><%=trainees[index].startDate %></td>
+        <td><%=trainees[index].endDate %></td>
       </tr>
       <% } %>
   </table>
   </div>
+  </div>
+  <%- include('__footer.ejs') %>
 </body>
 </html>

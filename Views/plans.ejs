@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plans</title>
+  <link rel="icon" href="/Images/letter-g-icon (1).png" type="image/png">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <%- include('__header.ejs') %>
+  
+  <h1>Plans Details</h1>
+  <div class="plan-container">
+    
+  <div id="data-container" class="card-container">
+    <h2>Existing plans</h2>
+    <% plans.forEach(item => { %>
+      <div class="card">
+        <h3><%= item.plan_name %></h3>
+        <p>Amount: <%= item.amount  %></p>
+        <p>Duration: <%= item.duration %></p>
+        <p>Description: <%= item.description %></p>
+      </div>
+    <% }); %>
+  </div>
+    <div class="new-p">
+      <h2>Add New Plan</h2>
+      <form action="/plansUpdate" method="post">
+        <label for="name">Plan Name</label>
+        <select name="name" id="name">
+          <option value="Daily">Daily</option>
+          <option value="Monthly">Monthly</option>
+          <option value="Quarterly">Quarterly</option>
+          <option value="Yearly">Yearly</option>
+          <option value="Special">Special</option>
+        </select>
+
+        <label for="amount">Amount</label>
+        <input type="number"name="amount" id="amount">
+
+        <label for="duration">Duration(in Days)</label>
+        <input type="number"name="duration" id="duration">
+
+        <label for="description">Description</label>
+        <textarea name="description" id="description" cols="30" rows="10"></textarea>
+
+        <input type="submit" value="Add New Plan">
+      </form>
+    </div>
+    </div>
+</body>
+</html>
