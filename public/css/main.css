@@ -1,15 +1,18 @@
-*{
+/* *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 body{
-  background: linear-gradient(90deg, rgb(233, 239, 240) 0%, rgb(254, 255, 255) 59%);
+  /* background-image: url(/Images/bg-desktop-dark.jpg); */
+  background-repeat: no-repeat;
+  background-size: cover;
   font-size: 20px;
+  background-color: white;
 } 
 
 header{
-  position: sticky;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -17,7 +20,7 @@ header{
   justify-content: space-between;
   align-items: center;
   padding: 15px 15px;
-  /* background-color: white; */
+  background-color: white;
   /* background-image: url('../Images/image-hero-desktop.jpg');
   background-repeat: no-repeat;
   background-size: cover; */
@@ -37,7 +40,7 @@ header nav a{
   font-size: 20px;
   border-bottom: 2px solid transparent; 
   transition: border-bottom-color 0.3s ease-in-out; 
-  background-color: rgb(30, 28, 27);
+  background-color: rgb(177, 73, 20);
   color: white;
   padding: 10px 10px;
 }
@@ -46,12 +49,16 @@ header nav a:hover{
   border-bottom-color: #e70606;
   background-color: rgb(245, 126, 23); 
 }
+header nav a img{
+  width: 20px;
+}
 form {
   max-width: 300px;
   margin: 0 auto;
   background-color: rgb(223, 221, 216);
   border-radius: 20px;
   padding: 25px;
+  margin-bottom: 20px;
 }
 form label,
   form input {
@@ -82,7 +89,7 @@ form label,
 .section1> h1,h2{
   margin: 30px 25%;
     text-align: center;
-    color: white;
+    /* color: white; */
 }
     /* .section1 h1{ 
     margin: 30px 25%;
@@ -104,32 +111,38 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+/* plans view */
+.plan-container{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.card-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 .card {
   border: 1px solid #ccc;
   padding: 20px;
-  margin: 30px 60px;
+  margin: 30px 10px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: rgb(175, 174, 172);
+  /* background-color: rgb(175, 174, 172); */
   transition: transform 0.3s; /* Add a smooth transition for scaling */
-  width: 49.99999%;
+  width: 24%;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 .card:hover{
   transform: translateY(-13px); /* Scale up by 5% */
+  border:1px solid rgb(245, 126, 23);
 }
-.card-container {
-  display: flex;
-  flex-direction: column;
-  /* flex-wrap: nowrap; */
-  align-items: center;
-  width: 49.99999%;
-}
-.plan-container{
-  display: flex;
-  justify-content: flex-start;
+.new-p{
+  margin-bottom: 20px;
 }
 .container > table{
   align-items: center;
@@ -139,20 +152,21 @@ tr:nth-child(even) {
 
 /* Section 1 */
 .section1 {
-  background-image: url(/Images/brett-jordan-U2q73PfHFpM-unsplash.jpg);
   padding: 20px 20px;
   background-size: cover;
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
   min-height: 350px;
+  /* background-image: url(/Images/brett-jordan-U2q73PfHFpM-unsplash\ \(1\).jpg); */
+}
+.hero-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .description h3 {
-  /* margin-top: 50px; */
   font-size: 40px;
   margin-bottom: 30px;
   line-height: 55px;
-  color: white;
+  /* color: white; */
 }
 .description h4 {
   margin-top: 10px;
@@ -167,20 +181,26 @@ tr:nth-child(even) {
   font-size: 20px;
   margin-bottom: 30px;
   line-height: 55px;
-  color: white;
+  /* color: white; */
 }
 .description a{
   text-decoration: none;
   color: rgb(245, 126, 23);
 }
+.hero-img img{
+  height: 50%;
+  max-width: 800px;
+  width: 100%;
+}
 /* Section 2  */
 .section2{
-  background-image: url(/Images/bg-desktop-light.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  border-top: 2px solid grey;
+  border-bottom:2px solid grey ;
 }
 .description-2 h1{
-  color: white;
+  color: black;
   display: flex;
   justify-content: center;
   padding: 20px 0;
@@ -189,15 +209,16 @@ tr:nth-child(even) {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; /* To evenly distribute elements in two columns */
-  /* max-width: 800px;  */
   margin: 0 30px; /* Center the programs element horizontally */
 }
 .programs {
   width: calc(50% - 30px);
   margin-bottom: 20px;
   padding: 20px; 
-  border: 1px solid black; 
+  /* border: 1px solid black;  */
   box-sizing: border-box; 
+  /* background-color: rgb(175, 174, 172); */
+  border-radius: 10px;
 }
 .programs:hover{
   border:1px solid rgb(245, 126, 23);
@@ -217,6 +238,16 @@ tr:nth-child(even) {
 .programs p {
   margin-top: 10px; 
 }
+
+/* section 3 */
+
+
+
+
+/* section 4 */
+.section4{
+  border-top: 2px solid grey;
+}
 /*
 .programs-container{
   display: flex;
@@ -232,12 +263,20 @@ tr:nth-child(even) {
   width: 49%;
 } */
 /* Footer */
+footer{
+  background-color: lightgray;
+  /* position: fixed; */
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+}
 footer .quick-links {
    display: flex;
   justify-content: center;
  align-items: center;
   padding: 20px 30px;
-  background-color: lightgray;
+  
 }
 footer .quick-links ul {
   list-style-type: none;
@@ -274,5 +313,23 @@ footer .footer-text p:nth-child(3) {
   margin-left: 100px; /* Adjust this margin to your preference */
 }
 
-
-
+/* Shop style */
+.gallery {
+          margin: 25px 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .gallery-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        .gallery-item img {
+            max-width: 100%;
+            height: auto;
+        }
+        .gallery-item h3 {
+            margin: 10px 0;
+            font-size: 16px;
+        }

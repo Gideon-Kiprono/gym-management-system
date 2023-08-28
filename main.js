@@ -41,25 +41,25 @@ app.use(
 app.get("/", (req, res) => {
   //console.log("Home route requested");
   // check if req.sessision.user---
-  conn.query(
-    "SELECT trainees.name,trainees.startDate,trainees.endDate, plans.description, trainees.email FROM trainees INNER JOIN plans ON trainees.plan_id=plans.plan_id",
-    (sqlerr, trainees) => {
-      if (sqlerr) {
-        res.send("Database error occured");
-        console.log(sqlerr);
+
+  //  "SELECT trainees.name, trainees.startDate, trainees.endDate, plans.description, trainees.email FROM trainees INNER JOIN plans ON trainees.plan_id = plans.plan_id",
+  conn.query("SELECT * FROM plans", (sqlerr, plans) => {
+    if (sqlerr) {
+      res.send("Database error occurred");
+      console.log(sqlerr);
+    } else {
+      // Assuming req.session.user contains user information
+      if (req.session.user) {
+        res.render("home.ejs", {
+          plans: plans,
+        
+          user: req.session.user,
+        });
       } else {
-        //console.log(trainees);
-        if (req.session.user) {
-          res.render("home.ejs", {
-            trainees: trainees,
-            user: req.session.user,
-          });
-        } else {
-          res.render("home.ejs", { trainees: trainees });
-        }
+        res.render("home.ejs", { plans: plans });
       }
     }
-  );
+  });
 });
 app.get("/plans", async (req, res) => {
   try {
@@ -81,6 +81,28 @@ app.get("/login", (req, res) => {
 app.get("/updateusers", (req, res) => {
   res.render("updateUsers.ejs");
 });
+app.get("/programs", (req, res) => {
+  conn.query("SELECT * FROM plans", (sqlerr, plans) => {
+    if (sqlerr) {
+      res.send("Database error occurred");
+      console.log(sqlerr);
+    } else {
+      // Assuming req.session.user contains user information
+      if (req.session.user) {
+        res.render("home.ejs", {
+          plans: plans,
+
+          user: req.session.user,
+        });
+      } else {
+        res.render("programs.ejs", { plans: plans });
+      }
+    }
+  });
+});
+app.get("/shop", (req, res) => {
+  res.render("shop.ejs");
+});
 app.get("/signUp", (req, res) => {
   res.render("Signup.ejs");
 });
@@ -88,6 +110,10 @@ app.get("/logout", (req, res) => {
   req.session.destroy(() => {
     res.redirect("/");
   });
+});
+
+app.get("/AdminPanel", (req, res) => {
+  res.render("admin.ejs")
 });
 
 //post routes

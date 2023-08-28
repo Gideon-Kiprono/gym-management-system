@@ -13,14 +13,24 @@
 
   <nav>
       <a href="/">Home</a>
+    
+      <% if(locals.user && locals.user.role === "Admin"){%>
+      <a href="/AdminPanel"> Admin Panel</a>
       <a href="/plans">Plans</a>
       <a href="/updateusers">Update Users</a>
+      <% } %>
+      <a href="/programs">Programs</a>
+      <a href="/shop">Shop</a>
       <% if(locals.user){%>
       <a href="/logout">Log Out</a>
       <% }else{%>
     <a href="/login">Sign In</a>
     <% } %>
     <a href="/signUp">Sign up</a>
+    <% if(locals.user && locals.user.role === "Normal"){%>
+      <a href="#"><img src="/Images/shopping-cart.png" alt="cart"></a>
+    <%}%>
+
       
     
   </nav>

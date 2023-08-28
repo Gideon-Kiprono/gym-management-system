@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programs</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" href="/Images/letter-g-icon (1).png" type="image/png">
+</head>
+<body>
+ <%-include("__header.ejs")%>
+
+ <section class="section4">
+<h2>Our Prices</h2>
+<div id="data-container" class="card-container">
+    <% plans.forEach(item => { %>
+      <div class="card">
+        <h3><%= item.plan_name %></h3>
+        <p>Amount: <%= item.amount  %></p>
+        <!-- <p>Duration: <%= item.duration %></p> -->
+        <p>Description: <%= item.description %></p>
+      </div>
+    <% }); %>
+  </div>
+  </section>
+  <script src="/js/index.js"></script>
+  <%- include('__footer.ejs') %>
+</body>
+</html>

@@ -12,9 +12,8 @@
   
   <h1>Plans Details</h1>
   <div class="plan-container">
-    
-  <div id="data-container" class="card-container">
     <h2>Existing plans</h2>
+  <div id="data-container" class="card-container">
     <% plans.forEach(item => { %>
       <div class="card">
         <h3><%= item.plan_name %></h3>
@@ -49,5 +48,6 @@
       </form>
     </div>
     </div>
+    <%- include('__footer.ejs') %>
 </body>
 </html>

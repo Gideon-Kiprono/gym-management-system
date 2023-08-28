@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-  <section class="section1">
   <%- include('__header.ejs') %>
+  <section class="section1">
 <h1>Home Page</h1>
   <% if(locals.user){%>
     <h2>Welcome <%= user.users_name  %></h2>
@@ -17,13 +17,15 @@
       <h2>Hello, Welcome to GMS</h2>
       <% } %> 
       <div class="container">
-
+<div class="hero-container">
 <div class="description">
-  <h3>Software for managing gym membership</h3>
   <h4>Software for the fitness industry to ease gym operations</h4>
-  <P>GOEFIT is a software for gym membership management, trainers can be able to track the payment of the users of the facility</P>
   <p>Already have an account <a href="/login">Sign In</a></p>
   <p>New here,<a href="/signUp">Sign up</a></p> 
+</div>
+<div class="hero-img">
+  <img src="/Images/gym-pe.png" alt="Hero image">
+</div>
 </div>
 </section>
 <section class="section2">
@@ -55,12 +57,11 @@
 </section>
 <section class="section3">
   <h1>We are here to guide you</h1>
-  <p>Team of expert trainers are available to guide and support you. Get prffesional pans, workouts and nutrition plans customixzed to your specific needs</p>
+  <p>Team of expert trainers are available to guide and support you. Get prffesional pans, workouts and nutrition plans customized to your specific needs</p>
+
 </section>
-<section class="section4">
-  <h1>Our Prices</h1>
-</section>
-<div class="Trainees">
+
+<!-- <div class="Trainees">
   
   <h2>Trainees Data</h2>
   <table>
@@ -72,18 +73,17 @@
       <th>End Date</th>
 
     </tr>
-    <% for(let index = 0; index<trainees.length;index++) {%>
+    /*  for(let index = 0; index<trainees.length;index++) {%> */
       <tr>
-        <td><%=trainees[index].name %></td>
-        <td><%=trainees[index].email %></td>
-        <td><%=trainees[index].description %></td>
-        <td><%=trainees[index].startDate %></td>
-        <td><%=trainees[index].endDate %></td>
+        <td>=trainees[index].name %></td>
+        <td>=trainees[index].email %></td>
+        <td>=trainees[index].description %></td>
+        <td>=trainees[index].startDate %></td>
+        <td>=trainees[index].endDate %></td>
       </tr>
-      <% } %>
+       } %>
   </table>
-  </div>
-  </div>
+  </div> -->
   <%- include('__footer.ejs') %>
 </body>
 </html>
