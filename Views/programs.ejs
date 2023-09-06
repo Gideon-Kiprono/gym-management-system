@@ -5,7 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Programs</title>
   <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/footer.css">
   <link rel="icon" href="/Images/letter-g-icon (1).png" type="image/png">
+  <style>
+    body{
+      background-color: black;
+    }
+  </style>
 </head>
 <body>
  <%-include("__header.ejs")%>
@@ -19,11 +25,12 @@
         <p>Amount: <%= item.amount  %></p>
         <!-- <p>Duration: <%= item.duration %></p> -->
         <p>Description: <%= item.description %></p>
+        <button type="button" id="checkout">Select</button>
       </div>
     <% }); %>
   </div>
   </section>
-  <script src="/js/index.js"></script>
   <%- include('__footer.ejs') %>
+  <script src="/js/index.js"></script>
 </body>
 </html>

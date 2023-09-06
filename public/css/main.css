@@ -1,30 +1,26 @@
-/* *{
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-} */
+}
 body{
-  /* background-image: url(/Images/bg-desktop-dark.jpg); */
   background-repeat: no-repeat;
   background-size: cover;
   font-size: 20px;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 } 
 
 header{
-  position: absolute;
+  /* position: absolute; */
   top: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 15px;
-  background-color: white;
-  /* background-image: url('../Images/image-hero-desktop.jpg');
-  background-repeat: no-repeat;
-  background-size: cover; */
-  height:100px
+  background-color: rgb(14, 14, 14);
 }
 header >h1{
   margin-right: 10px;
@@ -87,21 +83,12 @@ form label,
   
 }
 .section1> h1,h2{
-  margin: 30px 25%;
     text-align: center;
-    /* color: white; */
 }
-    /* .section1 h1{ 
-    margin: 30px 25%;
-    text-align: center;
-    color: white;
-  } */
-    table {
+table {
   font-family: arial, sans-serif;
-  /* border-collapse: collapse; */
   width: 100%;
 }
-
 td, th {
   border: 1px solid #dddddd;
   text-align: left;
@@ -126,13 +113,13 @@ tr:nth-child(even) {
 }
 .card {
   border: 1px solid #ccc;
-  padding: 20px;
-  margin: 30px 10px;
+  padding: 5px;
+  margin: 5px 10px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* background-color: rgb(175, 174, 172); */
+  background-color: bisque;
   transition: transform 0.3s; /* Add a smooth transition for scaling */
-  width: 24%;
+  width: 20%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -153,6 +140,7 @@ tr:nth-child(even) {
 /* Section 1 */
 .section1 {
   padding: 20px 20px;
+  background-color: rgb(245, 126, 23);
   background-size: cover;
   min-height: 350px;
   /* background-image: url(/Images/brett-jordan-U2q73PfHFpM-unsplash\ \(1\).jpg); */
@@ -185,7 +173,7 @@ tr:nth-child(even) {
 }
 .description a{
   text-decoration: none;
-  color: rgb(245, 126, 23);
+  color: white;
 }
 .hero-img img{
   height: 50%;
@@ -195,6 +183,7 @@ tr:nth-child(even) {
 /* Section 2  */
 .section2{
   background-repeat: no-repeat;
+  background-image: url(/Images/113877-OOJ772-668.jpg);
   background-size: cover;
   border-top: 2px solid grey;
   border-bottom:2px solid grey ;
@@ -209,10 +198,10 @@ tr:nth-child(even) {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; /* To evenly distribute elements in two columns */
-  margin: 0 30px; /* Center the programs element horizontally */
+  margin: 0 5px; /* Center the programs element horizontally */
 }
 .programs {
-  width: calc(50% - 30px);
+  width: calc(25% - 30px);
   margin-bottom: 20px;
   padding: 20px; 
   /* border: 1px solid black;  */
@@ -264,18 +253,31 @@ tr:nth-child(even) {
 } */
 /* Footer */
 footer{
-  background-color: lightgray;
-  /* position: fixed; */
-  bottom: 0;
-  right: 0;
-  left: 0;
+  background-color: rgb(14, 14, 14);
   display: flex;
+  justify-content: space-between;
+  color: white;
+  /* position: absolute; */
+  bottom: 0;
+  width: 100%;
 }
+/* footer {
+  background-color: rgb(14, 14, 14);
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  color: white;
+  position: fixed; 
+  left: 0;
+  bottom: 0;
+  width: 100%;
+} */
+
 footer .quick-links {
    display: flex;
   justify-content: center;
  align-items: center;
-  padding: 20px 30px;
+  padding: 5px 5px;
   
 }
 footer .quick-links ul {
@@ -297,39 +299,36 @@ footer a {
   color: inherit;
 }
 footer .footer-text {
-  padding: 20px 80px;
+  padding: 10px 10px;
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   /* gap: 30px; */
 }
-/* Apply margin to the second and third <p> elements */
-footer .footer-text p:nth-child(2) {
-  margin-left: 20px; /* Adjust this margin to your preference */
-}
-
-footer .footer-text p:nth-child(3) {
-  margin-left: 100px; /* Adjust this margin to your preference */
-}
 
 /* Shop style */
 .gallery {
-          margin: 25px 50px;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-        }
-        .gallery-item {
-            border: 1px solid #ccc;
-            padding: 10px;
-            text-align: center;
-        }
-        .gallery-item img {
-            max-width: 100%;
-            height: auto;
-        }
-        .gallery-item h3 {
-            margin: 10px 0;
-            font-size: 16px;
-        }
+ margin: 25px 50px;
+ display: flex;
+ flex-wrap: wrap;
+/* display: grid;
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));             */
+gap: 20px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.gallery-item {
+  flex: 0 1 calc(33.33% - 20px);
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;        
+}
+.gallery-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.gallery-item h3 {
+  margin: 10px 0;
+  font-size: 16px;
+}
